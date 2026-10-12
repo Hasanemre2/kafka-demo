@@ -1,0 +1,111 @@
+# ==============================================================================
+# .gitignore for .NET & Apache Kafka Demo
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. HASSAS BİLGİLER, ŞİFRELER VE KİMLİK DOĞRULAMA (Credentials & Secrets)
+# ------------------------------------------------------------------------------
+# Ortam değişkenleri ve gizli ayar dosyaları (Asla Git'e yüklenmemelidir)
+.env
+.env.*
+*.env
+!.env.example
+
+# .NET AppSettings ve kullanıcı sırları (secrets)
+appsettings*.json
+!appsettings.example.json
+!appsettings.template.json
+secrets.json
+usersecrets/
+*.secret
+*.secrets
+*.credentials
+client_secret*.json
+service-account*.json
+
+# Kafka & SSL/TLS Sertifikaları, Özel Anahtarlar ve JAAS konfigürasyonları
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.jks
+*.truststore
+*.keystore
+client.properties
+kafka_jaas.conf
+
+# Token ve şifre içeren olası dosyalar
+*password*
+*credential*
+*.token
+*.kdbx
+
+# ------------------------------------------------------------------------------
+# 2. .NET DERLEME ÇIKTILARI (Build Outputs)
+# ------------------------------------------------------------------------------
+**/[Bb]in/
+**/[Oo]bj/
+**/[Dd]ebug/
+**/[Rr]elease/
+**/x64/
+**/x86/
+[Bb]uild/
+[Aa]rtifacts/
+
+# Derleme dosyaları ve geçici binary dosyalar
+*.dll
+*.exe
+*.pdb
+*.runtimeconfig.json
+*.deps.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ------------------------------------------------------------------------------
+# 3. GELİŞTİRİCİ ARAÇLARI & IDE (Visual Studio, VS Code, JetBrains Rider)
+# ------------------------------------------------------------------------------
+# Visual Studio
+.vs/
+*.ide/
+Generated\ Files/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains Rider & ReSharper
+.idea/
+*.DotSettings.user
+_ReSharper*/
+
+# ------------------------------------------------------------------------------
+# 4. İŞLETİM SİSTEMİ DOSYALARI (OS Specific)
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ------------------------------------------------------------------------------
+# 5. LOG VE GEÇİCİ DOSYALAR (Logs & Temp)
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+_UpgradeReport_Files/
+UpgradeLog*.XML
+UpgradeLog*.htm
